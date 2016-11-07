@@ -1,0 +1,14 @@
+{% extends "dboard/base.html" %}
+
+{% block title %}{{ block.super }}: Question - {{ question.text|truncatewords:30}}{% endblock %}
+
+
+{% block content %}
+
+{{ question.text }}
+
+<br/>
+
+{{ question.answer }}
+
+{% endblock %}

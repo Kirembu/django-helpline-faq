@@ -1,0 +1,12 @@
+*.pyc
+*.bak
+*.db
+*.egg-info
+.tox/
+.coverage
+htmlcov/
+docs/_build
+dist/
+
+.idea
+.idea/*

@@ -1,0 +1,22 @@
+{% extends "dboard/base.html" %}
+
+{% block title %}{{ block.super }}: {{ topic }}{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 8px 0;">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div id="faq" class="col-sm-8">
+<br/>
+<button class="btn btn-success pull-right" onclick = 'window.location.href = "{% url 'faq_submit' %}"'>Submit Question</button>
+<h3>{{ topic }}</h3>
+<dl>
+{% for question in questions %}
+  <dt>{{ question.text }}</dt>
+  <dd class="answer">{{ question.answer }}</dd>
+{% endfor %}
+</dl>
+        </div>
+    </div>
+</div>
+{% endblock %}
