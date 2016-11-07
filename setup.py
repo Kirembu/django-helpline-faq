@@ -5,7 +5,7 @@ def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
 setup(
-    name = 'django-fack',
+    name = 'django-helpline-faq',
     version = '1.1',
     description = 'A simple FAQ application for Django sites.',
     long_description = read('README.rst'),
@@ -29,6 +29,6 @@ setup(
     ],
 
     install_requires = ['Django >= 1.3'],
-    test_suite = "fack._testrunner.runtests",
+    test_suite = "faq._testrunner.runtests",
     tests_require = ["mock"],
 )
