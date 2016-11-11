@@ -1,35 +1,36 @@
 import os
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+    README = readme.read()
+
+# allow setup.py to be run from any path
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name = 'django-helpline-faq',
-    version = '1.1',
-    description = 'A simple FAQ application for Django sites.',
-    long_description = read('README.rst'),
-    license = "BSD",
-
-    author  ='Kevin Fricovsky',
-    author_email = 'kfricovsky@gmail.com',
-    url = 'http://django-fack.rtfd.org/',
-
-    packages = find_packages(exclude=['example']),
+    name='django-helpline-faq',
+    version='1.2',
+    packages=find_packages(),
     include_package_data=True,
-    zip_safe = False,
-
-    classifiers = [
-        'Development Status :: 3 - Alpha',
+    license='BSD License',
+    description='A simple Django FAQ app for a helpline.',
+    long_description=README,
+    url='https://www.helpline.co.ke/',
+    author='Patrick Mithamo',
+    author_email='patrickmithamo@gmail.com',
+    classifiers=[
         'Environment :: Web Environment',
+        'Framework :: Django',
+        'Framework :: Django :: 1.9',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Framework :: Django',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Topic :: Internet :: WWW/HTTP',
+        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
-
-    install_requires = ['Django >= 1.3'],
-    test_suite = "faq._testrunner.runtests",
-    tests_require = ["mock"],
 )
