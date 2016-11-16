@@ -50,7 +50,7 @@ class Question(models.Model):
     topic = models.ForeignKey(Topic, verbose_name=_('topic'), related_name='questions')
     slug = models.SlugField(_('slug'), max_length=100)
     status = models.IntegerField(_('status'),
-        choices=STATUS_CHOICES, default=INACTIVE,
+        choices=STATUS_CHOICES, default=ACTIVE,
         help_text=_("Only questions with their status set to 'Active' will be "
                     "displayed. Questions marked as 'Group Header' are treated "
                     "as such by views and templates that are set up to use them."))
